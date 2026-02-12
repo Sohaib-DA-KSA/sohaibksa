@@ -2,6 +2,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import AnimatedSection from "./AnimatedSection";
 
 const projects = [
   {
@@ -87,51 +88,57 @@ const projects = [
 ];
 
 const ProjectsSection = () => (
-  <section id="projects" className="py-20 bg-background">
+  <section id="projects" className="py-20 bg-muted/50 relative overflow-hidden">
+    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
     <div className="max-w-6xl mx-auto px-4 space-y-10">
-      <h2 className="text-3xl font-bold text-center text-foreground">
-        Featured <span className="text-primary">Projects</span>
-      </h2>
+      <AnimatedSection>
+        <h2 className="text-3xl font-bold text-center text-foreground">
+          Featured <span className="text-primary">Projects</span>
+        </h2>
+      </AnimatedSection>
       <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((p) => (
-          <Card
+        {projects.map((p, idx) => (
+          <AnimatedSection
             key={p.title}
-            className="group hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            delay={idx % 2 === 0 ? 0.1 : 0.25}
+            direction={idx % 2 === 0 ? "left" : "right"}
           >
-            <CardHeader>
-              <CardTitle className="text-lg">{p.title}</CardTitle>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {p.tools.map((t) => (
-                  <Badge key={t} variant="secondary" className="text-xs bg-primary/10 text-primary border-0">
-                    {t}
-                  </Badge>
-                ))}
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p className="text-sm text-muted-foreground">{p.desc}</p>
-              <ul className="space-y-1">
-                {p.insights.map((i) => (
-                  <li key={i} className="text-sm text-foreground flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    {i}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-            <CardFooter className="gap-3">
-              <Button size="sm" variant="outline" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink size={14} /> Live Dashboard
-                </a>
-              </Button>
-              <Button size="sm" variant="outline" asChild>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  <Github size={14} /> GitHub
-                </a>
-              </Button>
-            </CardFooter>
-          </Card>
+            <Card className="group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-border hover:border-primary/30 h-full">
+              <CardHeader>
+                <CardTitle className="text-lg">{p.title}</CardTitle>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {p.tools.map((t) => (
+                    <Badge key={t} variant="secondary" className="text-xs bg-primary/10 text-primary border-0">
+                      {t}
+                    </Badge>
+                  ))}
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <p className="text-sm text-muted-foreground">{p.desc}</p>
+                <ul className="space-y-1">
+                  {p.insights.map((i) => (
+                    <li key={i} className="text-sm text-foreground flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter className="gap-3">
+                <Button size="sm" variant="outline" asChild>
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink size={14} /> Live Dashboard
+                  </a>
+                </Button>
+                <Button size="sm" variant="outline" asChild>
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    <Github size={14} /> GitHub
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          </AnimatedSection>
         ))}
       </div>
     </div>
