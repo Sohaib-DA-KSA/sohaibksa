@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,8 +23,8 @@ const ContactSection = () => (
         <AnimatedSection direction="left" delay={0.15}>
           <div className="space-y-5">
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
-              <div className="p-2 rounded-lg bg-primary/10"><Phone size={18} className="text-primary" /></div>
-              0345865205
+              <div className="p-2 rounded-lg bg-primary/10"><MessageCircle size={18} className="text-primary" /></div>
+              +923405865205
             </div>
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <div className="p-2 rounded-lg bg-primary/10"><MapPin size={18} className="text-primary" /></div>
