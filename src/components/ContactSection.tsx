@@ -1,69 +1,77 @@
-import { Mail, MessageCircle, MapPin, Linkedin, Github } from "lucide-react";
+import { MessageCircle, MapPin, Linkedin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import AnimatedSection from "./AnimatedSection";
 
 const ContactSection = () => (
-  <section id="contact" className="py-20 bg-muted/50 relative overflow-hidden">
-    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+  <section id="contact" className="py-20 relative overflow-hidden">
     <div className="max-w-4xl mx-auto px-4 space-y-10">
       <AnimatedSection>
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-3">
           <h2 className="text-3xl font-bold text-foreground">
-            Let's <span className="text-primary">Connect</span>
+            Let's <span className="text-primary">Collaborate</span>
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Let's turn data into insights together.
           </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-semibold">
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            Currently available for Internship & Junior Data Analyst roles
+          </div>
         </div>
       </AnimatedSection>
 
-      <div className="grid md:grid-cols-2 gap-10">
+      <div className="grid md:grid-cols-2 gap-8">
         <AnimatedSection direction="left" delay={0.15}>
-          <div className="space-y-5">
-            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+          <div className="glass-panel rounded-2xl p-6 space-y-5 h-full">
+            <h3 className="text-sm font-bold text-primary tracking-wider uppercase">Contact Info</h3>
+            <a
+              href="https://wa.me/923405865205"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
               <div className="p-2 rounded-lg bg-primary/10"><MessageCircle size={18} className="text-primary" /></div>
               +923405865205
-            </div>
+            </a>
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <div className="p-2 rounded-lg bg-primary/10"><MapPin size={18} className="text-primary" /></div>
-              Jeddah, KSA
+              Jeddah, Makkah Region, KSA
             </div>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
-              >
-                <div className="p-2 rounded-lg bg-primary/10"><Linkedin size={18} /></div>
-                LinkedIn
-              </a>
-            </div>
-            <div className="flex items-center gap-3">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
-              >
-                <div className="p-2 rounded-lg bg-primary/10"><Github size={18} /></div>
-                GitHub
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <div className="p-2 rounded-lg bg-primary/10"><Linkedin size={18} className="text-primary" /></div>
+              LinkedIn
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <div className="p-2 rounded-lg bg-primary/10"><Github size={18} className="text-primary" /></div>
+              GitHub
+            </a>
           </div>
         </AnimatedSection>
 
         <AnimatedSection direction="right" delay={0.15}>
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-            <Input placeholder="Your Name" />
-            <Input type="email" placeholder="Your Email" />
-            <Textarea placeholder="Your Message" rows={4} />
-            <Button type="submit" className="w-full shadow-lg shadow-primary/25">
-              Contact Me
-            </Button>
-          </form>
+          <div className="glass-panel rounded-2xl p-6 h-full">
+            <h3 className="text-sm font-bold text-primary tracking-wider uppercase mb-4">Send a Message</h3>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <Input placeholder="Your Name" className="bg-muted/30 border-border" />
+              <Input type="email" placeholder="Your Email" className="bg-muted/30 border-border" />
+              <Textarea placeholder="Your Message" rows={4} className="bg-muted/30 border-border" />
+              <Button type="submit" className="w-full shadow-lg shadow-primary/20">
+                Send Message
+              </Button>
+            </form>
+          </div>
         </AnimatedSection>
       </div>
     </div>

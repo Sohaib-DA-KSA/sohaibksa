@@ -4,83 +4,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --background: 220 30% 7%;
+    --foreground: 220 13% 91%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 220 26% 10%;
+    --card-foreground: 220 13% 91%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 220 26% 10%;
+    --popover-foreground: 220 13% 91%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 187 92% 53%;
+    --primary-foreground: 220 30% 7%;
 
-    --secondary: 168 76% 42%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 217 71% 68%;
+    --secondary-foreground: 220 30% 7%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 218 11% 65%;
 
-    --accent: 168 76% 42%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 187 92% 53%;
+    --accent-foreground: 220 30% 7%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 90%;
-    --input: 214 20% 90%;
-    --ring: 199 89% 48%;
+    --border: 220 16% 18%;
+    --input: 220 16% 18%;
+    --ring: 187 92% 53%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 199 89% 48%;
-  }
-
-  .dark {
-    --background: 215 25% 8%;
-    --foreground: 210 20% 95%;
-
-    --card: 215 25% 12%;
-    --card-foreground: 210 20% 95%;
-
-    --popover: 215 25% 12%;
-    --popover-foreground: 210 20% 95%;
-
-    --primary: 199 89% 48%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 168 76% 42%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 215 20% 18%;
-    --muted-foreground: 215 16% 60%;
-
-    --accent: 168 76% 42%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 215 20% 20%;
-    --input: 215 20% 20%;
-    --ring: 199 89% 48%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 199 89% 48%;
+    --sidebar-background: 220 26% 10%;
+    --sidebar-foreground: 220 13% 91%;
+    --sidebar-primary: 187 92% 53%;
+    --sidebar-primary-foreground: 220 30% 7%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 220 13% 91%;
+    --sidebar-border: 220 16% 18%;
+    --sidebar-ring: 187 92% 53%;
   }
 }
 
@@ -97,4 +58,52 @@
   html {
     scroll-behavior: smooth;
   }
+}
+
+/* Analytics grid background */
+.analytics-grid {
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 211, 238, 0.1);
+}
+
+/* KPI card */
+.kpi-card {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(96, 165, 250, 0.05));
+  border: 1px solid rgba(34, 211, 238, 0.15);
+}
+
+/* Insight box */
+.insight-box {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.06), transparent);
+  border-left: 3px solid hsl(187 92% 53%);
+}
+
+/* Glow effect on hover */
+.glow-hover:hover {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15), 0 0 40px rgba(34, 211, 238, 0.05);
+}
+
+/* Count up animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Line draw animation */
+@keyframes lineDraw {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-line-draw {
+  animation: lineDraw 1.5s ease-out forwards;
 }

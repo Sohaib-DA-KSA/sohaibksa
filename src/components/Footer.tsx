@@ -1,7 +1,7 @@
 import { Linkedin, Github } from "lucide-react";
 
 const Footer = () => (
-  <footer className="border-t border-border py-6 bg-muted/30">
+  <footer className="border-t border-border py-6 bg-muted/20">
     <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
       <span>© {new Date().getFullYear()} Sohaib Adnan. All rights reserved.</span>
       <div className="flex items-center gap-4">
