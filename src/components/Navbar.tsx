@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Menu, X, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import { Menu, X, Linkedin, Github } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
@@ -12,62 +12,98 @@ const navLinks = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("#home");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
+      const sections = navLinks.map((l) => document.querySelector(l.href));
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const s = sections[i];
+        if (s && (s as HTMLElement).getBoundingClientRect().top <= 120) {
+          setActive(navLinks[i].href);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-lg shadow-black/20"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 h-16">
         <a href="#home" className="text-lg font-bold text-foreground tracking-tight">
           Sohaib<span className="text-primary">.</span>
+          <span className="text-xs text-muted-foreground ml-1 font-normal">Data Analyst</span>
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative ${
+                active === l.href
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {l.label}
+              {active === l.href && (
+                <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary rounded-full" />
+              )}
             </a>
           ))}
-          <a
-            href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:text-primary/80 transition-colors"
-          >
-            <Linkedin size={20} />
-          </a>
+          <div className="flex items-center gap-2 ml-4 pl-4 border-l border-border">
+            <a
+              href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+            >
+              <Linkedin size={18} />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+            >
+              <Github size={18} />
+            </a>
+          </div>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-background border-b border-border px-4 pb-4 space-y-3">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-4 pb-4 space-y-1">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className={`block px-3 py-2 text-sm font-medium rounded-lg transition-colors ${
+                active === l.href
+                  ? "text-primary bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {l.label}
             </a>
           ))}
-          <a
-            href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm text-primary"
-          >
-            <Linkedin size={16} /> LinkedIn
-          </a>
         </div>
       )}
     </nav>
