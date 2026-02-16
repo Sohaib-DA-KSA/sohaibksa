@@ -21,10 +21,9 @@ const HeroSection = () => {
           </h2>
 
           <p className="text-muted-foreground max-w-lg">
-            I transform raw data into meaningful insights and interactive dashboards.
-            Passionate about solving business problems using analytics and visualization.
-          </p>
-
+            I turn raw data into actionable insights and interactive dashboards that drive business decisions.
+            Passionate about solving real-world business problems with analytics and visualization.
+</p>
           <div className="flex gap-4 justify-center md:justify-start">
             <a
               href="#projects"

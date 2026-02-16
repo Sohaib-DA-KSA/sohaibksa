@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Linkedin, Github } from "lucide-react";
+import { Menu, X, Linkedin } from "lucide-react";
+import SocialGithub from "@/components/SocialGithub"; // <-- import reusable GitHub component
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -72,22 +73,19 @@ const Navbar = () => {
             >
               <Linkedin size={18} />
             </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-            >
-              <Github size={18} />
-            </a>
+
+            {/* GitHub now uses reusable SocialGithub component */}
+            <SocialGithub size={18} className="p-2 rounded-lg hover:bg-primary/10" />
           </div>
         </div>
 
+        {/* Mobile Menu Button */}
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-4 pb-4 space-y-1">
           {navLinks.map((l) => (

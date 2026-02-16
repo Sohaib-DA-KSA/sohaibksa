@@ -1,13 +1,14 @@
-import { MessageCircle, MapPin, Linkedin, Github } from "lucide-react";
+import { MessageCircle, MapPin, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import AnimatedSection from "./AnimatedSection";
+import SocialGithub from "@/components/SocialGithub"; // import the reusable component
 
 const ContactSection = () => (
   <section id="contact" className="py-20 relative overflow-hidden">
     <div className="max-w-4xl mx-auto px-4 space-y-10">
-      
+
       {/* Section Header */}
       <AnimatedSection>
         <div className="text-center space-y-3">
@@ -44,11 +45,13 @@ const ContactSection = () => (
               +92 340 5865205
             </a>
 
+            {/* Location */}
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
               <div className="p-2 rounded-lg bg-primary/10"><MapPin size={18} className="text-primary" /></div>
               Jeddah, Makkah Region, KSA
             </div>
 
+            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
               target="_blank"
@@ -59,15 +62,20 @@ const ContactSection = () => (
               LinkedIn
             </a>
 
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <div className="p-2 rounded-lg bg-primary/10"><Github size={18} className="text-primary" /></div>
-              GitHub
-            </a>
+            {/* GitHub */}
+            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="p-2 rounded-lg bg-primary/10">
+                <SocialGithub size={18} />
+              </div>
+              <a
+                href="https://github.com/Sohaib-DA-KSA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </AnimatedSection>
 
