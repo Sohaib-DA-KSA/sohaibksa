@@ -13,6 +13,7 @@ const Index = () => {
   return (
     <>
       <Navbar />
+
       <main>
         <HeroSection />
         <AboutSection />
@@ -23,6 +24,7 @@ const Index = () => {
         <ValueSection />
         <ContactSection />
       </main>
+
       <Footer />
     </>
   );
