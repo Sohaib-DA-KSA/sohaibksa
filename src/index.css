@@ -2,46 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================
+   COLOR SYSTEM (NEW THEME)
+   Navy + White + Yellow
+   ========================= */
+
 @layer base {
   :root {
-    --background: 220 30% 7%;
-    --foreground: 220 13% 91%;
 
-    --card: 220 26% 10%;
-    --card-foreground: 220 13% 91%;
+    /* Background */
+    --background: 222 47% 11%;      /* Navy */
+    --foreground: 210 40% 98%;      /* White */
 
-    --popover: 220 26% 10%;
-    --popover-foreground: 220 13% 91%;
+    /* Cards */
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
 
-    --primary: 187 92% 53%;
-    --primary-foreground: 220 30% 7%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
 
-    --secondary: 217 71% 68%;
-    --secondary-foreground: 220 30% 7%;
+    /* Primary = Yellow */
+    --primary: 45 93% 58%;
+    --primary-foreground: 222 47% 11%;
 
-    --muted: 220 20% 14%;
-    --muted-foreground: 218 11% 65%;
+    /* Secondary = Soft blue */
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 210 40% 98%;
 
-    --accent: 187 92% 53%;
-    --accent-foreground: 220 30% 7%;
+    /* Muted */
+    --muted: 222 30% 20%;
+    --muted-foreground: 215 20% 70%;
 
+    /* Accent (also yellow lighter) */
+    --accent: 45 100% 65%;
+    --accent-foreground: 222 47% 11%;
+
+    /* Danger */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 16% 18%;
-    --input: 220 16% 18%;
-    --ring: 187 92% 53%;
+    /* Borders */
+    --border: 222 30% 25%;
+    --input: 222 30% 25%;
+    --ring: 45 93% 58%;
 
-    --radius: 0.75rem;
+    --radius: 0.6rem;
 
-    --sidebar-background: 220 26% 10%;
-    --sidebar-foreground: 220 13% 91%;
-    --sidebar-primary: 187 92% 53%;
-    --sidebar-primary-foreground: 220 30% 7%;
-    --sidebar-accent: 220 20% 14%;
-    --sidebar-accent-foreground: 220 13% 91%;
-    --sidebar-border: 220 16% 18%;
-    --sidebar-ring: 187 92% 53%;
+    /* Sidebar */
+    --sidebar-background: 222 47% 14%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 45 93% 58%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 30% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 25%;
+    --sidebar-ring: 45 93% 58%;
   }
 }
 
@@ -53,6 +68,14 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+
+    /* Solid navy gradient background */
+    background: linear-gradient(
+      180deg,
+      #0f172a 0%,
+      #0b1220 100%
+    );
+    min-height: 100vh;
   }
 
   html {
@@ -60,45 +83,49 @@
   }
 }
 
-/* Analytics grid background */
+/* =========================
+   COMPONENT STYLES
+   ========================= */
+
+/* Subtle grid background */
 .analytics-grid {
   background-image:
-    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 215, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 215, 0, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
-/* Glassmorphism panel */
+/* Solid cards (NO GLASS) */
 .glass-panel {
-  background: rgba(17, 24, 39, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(34, 211, 238, 0.1);
+  background: hsl(222 47% 14%);
+  border: 1px solid hsl(222 30% 25%);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
 
-/* KPI card */
+/* KPI cards */
 .kpi-card {
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(96, 165, 250, 0.05));
-  border: 1px solid rgba(34, 211, 238, 0.15);
+  background: linear-gradient(135deg, rgba(255,215,0,0.12), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,215,0,0.25);
 }
 
 /* Insight box */
 .insight-box {
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.06), transparent);
-  border-left: 3px solid hsl(187 92% 53%);
+  background: rgba(255,215,0,0.05);
+  border-left: 3px solid hsl(45 93% 58%);
 }
 
-/* Glow effect on hover */
+/* Yellow hover glow */
 .glow-hover:hover {
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15), 0 0 40px rgba(34, 211, 238, 0.05);
+  box-shadow: 0 0 12px rgba(255,215,0,0.25);
 }
 
-/* Count up animation */
+/* Count animation */
 @keyframes countUp {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Line draw animation */
+/* Line draw */
 @keyframes lineDraw {
   from { width: 0; }
   to { width: 100%; }
