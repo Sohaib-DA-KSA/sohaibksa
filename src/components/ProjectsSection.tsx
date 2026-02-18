@@ -109,7 +109,7 @@ const projects = [
   {
     title: "Data Cleaning & Exploratory Analysis",
     focus: "Data Reliability",
-    tools: ["Python", "Pandas", "Matplotlib"],
+    tools: ["Python", "Pandas", "Numpy"],
     problem: "Transform messy real-world datasets into clean, analysis-ready formats.",
     kpis: [
       { label: "Quality ↑", icon: TrendingUp },

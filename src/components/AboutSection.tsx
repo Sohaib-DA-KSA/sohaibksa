@@ -27,9 +27,10 @@ const AboutSection = () => (
       <AnimatedSection delay={0.15}>
         <div className="glass-panel rounded-2xl p-8 space-y-6">
           <p className="text-muted-foreground text-center leading-relaxed max-w-3xl mx-auto">
-            Data Analyst who solves business problems — not just someone who makes dashboards.
-            I focus on uncovering revenue opportunities, reducing losses, and translating data
-            into decisions that stakeholders can act on. Every analysis I do answers: <span className="text-primary font-medium">"So what?"</span> and{" "}
+        Data Analyst skilled in SQL, Excel, Power BI, and Python, focused on delivering accurate and impactful insights.
+Experienced in data cleaning, analysis, and building interactive dashboards.
+Strong understanding of KPIs and business reporting to support decision-making.
+Eager to contribute to data-driven organizations. Every analysis I do answers: <span className="text-primary font-medium">"So what?"</span> and{" "}
             <span className="text-primary font-medium">"What decision can a company make using this?"</span>
           </p>
 

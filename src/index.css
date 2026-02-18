@@ -3,83 +3,89 @@
 @tailwind utilities;
 
 /* =========================
-   COLOR SYSTEM (NEW THEME)
-   Navy + White + Yellow
+   COLOR SYSTEM: Emerald Green + Gold (Saudi Sector)
    ========================= */
-
 @layer base {
   :root {
-
-    /* Background */
-    --background: 222 47% 11%;      /* Navy */
-    --foreground: 210 40% 98%;      /* White */
+    /* Background & Text */
+    --background: 160 50% 10%;
+    /* Dark Emerald */
+    --foreground: 210 40% 98%;
+    /* White */
+    --muted-foreground: 160 20% 80%;
+    /* Soft green-white */
 
     /* Cards */
-    --card: 222 47% 14%;
+    --card: 160 40% 12%;
+    /* Darker Green */
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 14%;
-    --popover-foreground: 210 40% 98%;
+    /* Primary = Gold */
+    --primary: 48 100% 50%;
+    /* Rich Gold */
+    --primary-foreground: 160 50% 10%;
 
-    /* Primary = Yellow */
-    --primary: 45 93% 58%;
-    --primary-foreground: 222 47% 11%;
-
-    /* Secondary = Soft blue */
-    --secondary: 217 91% 60%;
+    /* Secondary = Lighter Green */
+    --secondary: 160 30% 25%;
     --secondary-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* Muted */
-    --muted: 222 30% 20%;
-    --muted-foreground: 215 20% 70%;
-
-    /* Accent (also yellow lighter) */
-    --accent: 45 100% 65%;
-    --accent-foreground: 222 47% 11%;
-
-    /* Danger */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders */
-    --border: 222 30% 25%;
-    --input: 222 30% 25%;
-    --ring: 45 93% 58%;
+    /* Borders & Inputs */
+    --border: 160 30% 25%;
+    --input: 160 30% 25%;
+    --ring: 48 100% 50%;
 
     --radius: 0.6rem;
-
-    /* Sidebar */
-    --sidebar-background: 222 47% 14%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 45 93% 58%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 222 30% 20%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 30% 25%;
-    --sidebar-ring: 45 93% 58%;
   }
 }
 
 @layer base {
+
+  /* Global Styles */
   * {
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+  html {
+    scroll-behavior: smooth;
+  }
 
-    /* Solid navy gradient background */
-    background: linear-gradient(
-      180deg,
-      #0f172a 0%,
-      #0b1220 100%
-    );
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply text-foreground;
+
+    /* Deep Emerald Green Gradient */
+    background: linear-gradient(180deg, #002213 0%, #003319 100%);
     min-height: 100vh;
   }
 
-  html {
-    scroll-behavior: smooth;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-foreground;
+    font-weight: 700;
+  }
+
+  p,
+  li,
+  span {
+    @apply text-muted-foreground;
+  }
+
+  a,
+  button {
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  a:hover,
+  button:hover {
+    color: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
   }
 }
 
@@ -87,7 +93,40 @@
    COMPONENT STYLES
    ========================= */
 
-/* Subtle grid background */
+/* Cards / Panels */
+.glass-panel {
+  background: hsl(160 40% 12% / 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  border: 1px solid hsl(160 30% 25% / 0.5);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255, 215, 0, 0.2);
+  /* Gold glow */
+  border-color: var(--primary);
+}
+
+/* KPI Cards */
+.kpi-card {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 0, 0, 0.2));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: var(--radius);
+}
+
+/* Insight Box */
+.insight-box {
+  background: rgba(255, 215, 0, 0.05);
+  border-left: 3px solid var(--primary);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Grid background for Analytics */
 .analytics-grid {
   background-image:
     linear-gradient(rgba(255, 215, 0, 0.05) 1px, transparent 1px),
@@ -95,42 +134,140 @@
   background-size: 40px 40px;
 }
 
-/* Solid cards (NO GLASS) */
-.glass-panel {
-  background: hsl(222 47% 14%);
-  border: 1px solid hsl(222 30% 25%);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+/* Buttons */
+.button {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  transition: all 0.25s ease;
 }
 
-/* KPI cards */
-.kpi-card {
-  background: linear-gradient(135deg, rgba(255,215,0,0.12), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,215,0,0.25);
+.button:hover {
+  background-color: #e6c200;
+  /* Darker gold */
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
-/* Insight box */
-.insight-box {
-  background: rgba(255,215,0,0.05);
-  border-left: 3px solid hsl(45 93% 58%);
-}
-
-/* Yellow hover glow */
+/* Glow Hover Effect */
 .glow-hover:hover {
-  box-shadow: 0 0 12px rgba(255,215,0,0.25);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
 }
 
-/* Count animation */
+/* Animations */
 @keyframes countUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Line draw */
 @keyframes lineDraw {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 .animate-line-draw {
   animation: lineDraw 1.5s ease-out forwards;
+}
+
+/* =========================
+   PRINT STYLES (PDF Generation)
+   ========================= */
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: white !important;
+    /* Save toner? Or keep theme? User asked for 'whole portfolio'. */
+    color: black !important;
+  }
+
+  /* Force background colors to show if user wants the 'theme' */
+  body.theme-print {
+    background: linear-gradient(180deg, #002213 0%, #003319 100%) !important;
+    color: white !important;
+  }
+
+  /* Hide interactive elements not needed in PDF */
+  button,
+  nav,
+  footer,
+  .fixed,
+  .animate-bounce,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  /* Ensure text is readable */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  li {
+    color: inherit !important;
+    text-shadow: none !important;
+  }
+
+  /* Expand containers */
+  .container,
+  section {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 20px !important;
+    page-break-inside: avoid;
+  }
+
+  /* Profile Image adjustment */
+  img {
+    max-width: 150px !important;
+    height: auto !important;
+    border-radius: 50% !important;
+    margin-bottom: 1rem;
+  }
+
+  /* Links - show URL? No, usually cleaner without for resume */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}
+
+/* =========================
+   CUSTOM CURSOR LOGIC
+   ========================= */
+@media (min-width: 768px) {
+
+  /* Hide default cursor only where custom cursor is visible */
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  label {
+    cursor: none !important;
+  }
 }

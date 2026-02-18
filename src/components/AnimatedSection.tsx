@@ -26,7 +26,7 @@ const AnimatedSection = ({
       initial={{ opacity: 0, y: offset.y, x: offset.x }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      transition={{ duration: 0.5, delay, type: "spring", stiffness: 100, damping: 20 }}
       className={className}
     >
       {children}

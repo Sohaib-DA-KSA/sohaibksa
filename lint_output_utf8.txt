@@ -1,0 +1,52 @@
+﻿
+> vite_react_shadcn_ts@0.0.0 lint
+> eslint .
+
+
+E:\portfolio\sohaibksa\src\components\ExperienceSection.tsx
+  30:7  error  Parsing error: JSX element 'AnimatedSection' has no corresponding closing tag
+
+E:\portfolio\sohaibksa\src\components\ui\badge.tsx
+  29:17  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\portfolio\sohaibksa\src\components\ui\button.tsx
+  47:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\portfolio\sohaibksa\src\components\ui\command.tsx
+  24:11  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+E:\portfolio\sohaibksa\src\components\ui\form.tsx
+  129:10  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\portfolio\sohaibksa\src\components\ui\navigation-menu.tsx
+  111:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\portfolio\sohaibksa\src\components\ui\sidebar.tsx
+  536:26  error    Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+E:\portfolio\sohaibksa\src\components\ui\sidebar.tsx:536:26
+  534 |   // Random width between 50 to 90%.
+  535 |   const width = React.useMemo(() => {
+> 536 |     return `${Math.floor(Math.random() * 40) + 50}%`;
+      |                          ^^^^^^^^^^^^^ Cannot call impure function
+  537 |   }, []);
+  538 |
+  539 |   return (  react-hooks/purity
+  636:3   warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react-refresh/only-export-components
+
+E:\portfolio\sohaibksa\src\components\ui\sonner.tsx
+  27:19  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\portfolio\sohaibksa\src\components\ui\textarea.tsx
+  5:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+E:\portfolio\sohaibksa\src\components\ui\toggle.tsx
+  37:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+E:\portfolio\sohaibksa\tailwind.config.ts
+  90:13  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+Γ£û 12 problems (5 errors, 7 warnings)
+

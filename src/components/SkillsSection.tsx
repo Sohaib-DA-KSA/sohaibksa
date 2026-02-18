@@ -15,7 +15,7 @@ const categories = [
     title: "Visualization",
     skills: [
       { icon: BarChart3, label: "Power BI" },
-      { icon: LineChart, label: "Matplotlib" },
+      { icon: LineChart, label: "Mathplotlib" },
       { icon: LineChart, label: "Seaborn" },
     ],
   },
