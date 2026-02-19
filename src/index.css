@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -58,6 +60,10 @@
     /* Deep Emerald Green Gradient */
     background: linear-gradient(180deg, #002213 0%, #003319 100%);
     min-height: 100vh;
+  }
+
+  [dir="rtl"] body {
+    font-family: 'Almarai', sans-serif;
   }
 
   h1,
@@ -198,14 +204,7 @@
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     background: white !important;
-    /* Save toner? Or keep theme? User asked for 'whole portfolio'. */
     color: black !important;
-  }
-
-  /* Force background colors to show if user wants the 'theme' */
-  body.theme-print {
-    background: linear-gradient(180deg, #002213 0%, #003319 100%) !important;
-    color: white !important;
   }
 
   /* Hide interactive elements not needed in PDF */
@@ -232,27 +231,31 @@
     text-shadow: none !important;
   }
 
-  /* Expand containers */
-  .container,
-  section {
-    width: 100% !important;
-    max-width: none !important;
-    padding: 20px !important;
-    page-break-inside: avoid;
-  }
-
-  /* Profile Image adjustment */
-  img {
+  /* Profile Image adjustment - specific class only */
+  img.print-profile-img {
     max-width: 150px !important;
-    height: auto !important;
+    height: 150px !important;
     border-radius: 50% !important;
     margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid var(--primary) !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  /* Links - show URL? No, usually cleaner without for resume */
-  a {
-    text-decoration: none !important;
-    color: inherit !important;
+  /* Neutralize layout-breaking effects for print */
+  .glass-panel {
+    transform: none !important;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
   }
 }
 

@@ -4,13 +4,13 @@ const PrintCoverPage = () => {
     return (
         <div className="hidden print:flex flex-col items-center justify-center w-full h-screen relative overflow-hidden break-after-page page-break-after-always">
             {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 print:block">
                 <img
                     src={dashboardImg}
                     alt="Analytics Dashboard Background"
-                    className="w-full h-full object-cover opacity-30 filter grayscale contrast-125"
+                    className="w-full h-full object-cover opacity-30 filter grayscale contrast-125 print:w-full print:h-full print:object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/40 to-white/90" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/40 to-white/90 print:block" />
             </div>
 
             {/* Content */}

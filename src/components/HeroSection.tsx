@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import profileImg from "@/assets/profile.png";
+import { useLanguage } from "../context/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -43,25 +45,23 @@ const HeroSection = () => {
           className="space-y-6 text-center md:text-left"
         >
           <motion.h1 variants={item} className="text-4xl md:text-6xl font-bold leading-tight">
-            Hi, I'm{" "}
+            {t('hero.greeting')}{" "}
             <a
               href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary inline-block hover:scale-105 transition-transform cursor-pointer hover:underline decoration-primary/50 underline-offset-8"
             >
-              Sohaib Adnan
+              {t('hero.name')}
             </a>
           </motion.h1>
 
           <motion.h2 variants={item} className="text-xl md:text-2xl text-muted-foreground">
-            Data Analyst | Power BI | MS Excel | Data Visualization | SQL
+            {t('hero.role')}
           </motion.h2>
 
           <motion.p variants={item} className="text-muted-foreground max-w-lg mx-auto md:mx-0">
-            I help companies increase revenue and reduce costs using data analysis and dashboards.
-            Data Analyst specializing in business reporting, KPI tracking, and decision-making analytics.
-
+            {t('hero.description')}
           </motion.p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -69,21 +69,21 @@ const HeroSection = () => {
               href="#projects"
               className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:opacity-90 transition shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 text-center"
             >
-              View Projects
+              {t('hero.viewProjects')}
             </a>
 
             <a
               href="#contact"
               className="px-6 py-3 rounded-xl border border-primary/30 hover:bg-primary/10 transition hover:-translate-y-1 text-center"
             >
-              Contact Me
+              {t('hero.contactMe')}
             </a>
 
             <button
               onClick={() => window.print()}
               className="px-6 py-3 rounded-xl border border-primary/30 hover:bg-primary/10 transition hover:-translate-y-1 flex items-center justify-center gap-2 group"
             >
-              <span>Download Resume</span>
+              <span>{t('hero.downloadResume')}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -114,23 +114,23 @@ const HeroSection = () => {
           >
 
             {/* Glow background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/30 rounded-full blur-3xl scale-110 opacity-70 animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/30 rounded-full blur-3xl scale-110 opacity-70 animate-pulse print:hidden" />
 
             {/* Circular image with 3D Float effect */}
             <motion.div
               whileHover={{ scale: 1.05, rotate: 2, y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 cursor-pointer"
+              className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 cursor-pointer print:border-none print:shadow-none print:w-48 print:h-48 print:mx-auto"
             >
               <img
                 src={profileImg}
                 alt="Sohaib Adnan - Data Analyst"
-                className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500 print-profile-img"
                 style={{ objectPosition: "50% 25%" }}
               />
 
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent print:hidden" />
             </motion.div>
 
           </motion.div>
