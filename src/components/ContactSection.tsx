@@ -19,12 +19,23 @@ const ContactSection = () => {
     if (!formRef.current) return;
 
     setLoading(true);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setSuccess("Email service not configured. Please check environment variables.");
+      setLoading(false);
+      return;
+    }
+
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",   // replace with your EmailJS Service ID
-        "YOUR_TEMPLATE_ID",  // replace with your EmailJS Template ID
+        serviceId,
+        templateId,
         formRef.current,
-        "YOUR_PUBLIC_KEY"    // replace with your EmailJS Public Key
+        publicKey
       )
       .then(
         (result) => {
@@ -96,6 +107,17 @@ const ContactSection = () => {
                   <Linkedin size={18} className="text-primary" />
                 </div>
                 LinkedIn
+              </a>
+
+              <a
+                href="mailto:sohaibadnan205@gmail.com"
+                className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                dir="ltr"
+              >
+                <div className="p-2 rounded-lg bg-primary/10">
+                  <Send size={18} className="text-primary" />
+                </div>
+                sohaibadnan205@gmail.com
               </a>
 
               <div className="flex items-center gap-3 text-sm text-muted-foreground">

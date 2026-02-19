@@ -6,11 +6,11 @@ const AnalyticalSection = () => {
 
   return (
     <section id="analytics" className="py-20 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 space-y-8 md:space-y-12">
 
         {/* Section Title */}
         <AnimatedSection>
-          <h2 className="text-3xl font-bold text-center text-foreground">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground">
             {t('analytics.title')} <span className="text-primary">{t('analytics.subtitle')}</span>
           </h2>
           <p className="text-center text-muted-foreground text-sm mt-2 max-w-2xl mx-auto">

@@ -55,7 +55,7 @@
 
   body {
     font-family: 'Inter', sans-serif;
-    @apply text-foreground;
+    @apply text-foreground overflow-x-hidden;
 
     /* Deep Emerald Green Gradient */
     background: linear-gradient(180deg, #002213 0%, #003319 100%);

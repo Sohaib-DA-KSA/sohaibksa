@@ -67,10 +67,10 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-20 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 space-y-10">
+      <div className="max-w-6xl mx-auto px-4 space-y-8 md:space-y-10">
         <AnimatedSection>
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-foreground">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
               {t('projects.title')} <span className="text-primary">{t('projects.subtitle')}</span>
             </h2>
             <p className="text-muted-foreground text-sm">
@@ -79,7 +79,7 @@ const ProjectsSection = () => {
           </div>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {Array.isArray(translatedProjects) && translatedProjects.map((p, idx) => {
             const meta = projectMetadata[idx] || projectMetadata[0];
             return (

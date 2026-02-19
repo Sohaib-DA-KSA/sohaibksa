@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Linkedin } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import SocialGithub from "@/components/SocialGithub";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "../context/LanguageContext";
@@ -44,25 +45,30 @@ const Navbar = () => {
         }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 h-16">
-        <a href="#home" className="text-lg font-bold text-foreground tracking-tight">
-          Sohaib<span className="text-primary">.</span>
-          <span className="text-xs text-muted-foreground ml-1 font-normal">{t('hero.role').split('|')[0]}</span>
+        <a href="#home" className="text-lg font-bold text-foreground tracking-tight flex items-center gap-1">
+          <span>Sohaib</span><span className="text-primary font-black">.</span>
+          <span className="hidden xs:inline-block text-[10px] uppercase tracking-wider text-muted-foreground font-normal ml-1">
+            {t('hero.role').split('|')[0]}
+          </span>
         </a>
 
-        {/* Desktop */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
               className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative ${active === l.href
-                ? "text-primary"
-                : "text-muted-foreground hover:text-foreground"
+                ? "text-primary bg-primary/5"
+                : "text-muted-foreground hover:text-foreground hover:bg-white/5"
                 }`}
             >
               {l.label}
               {active === l.href && (
-                <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary rounded-full" />
+                <motion.span
+                  layoutId="nav-active"
+                  className="absolute bottom-0 left-3 right-3 h-0.5 bg-primary rounded-full"
+                />
               )}
             </a>
           ))}
@@ -73,43 +79,80 @@ const Navbar = () => {
               href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all font-ar-body"
+              className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
             >
               <Linkedin size={18} />
             </a>
 
-            {/* GitHub now uses reusable SocialGithub component */}
             <SocialGithub size={18} className="p-2 rounded-lg hover:bg-primary/10" />
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="flex items-center gap-2 md:hidden">
+        {/* Mobile Navbar Controls */}
+        <div className="flex items-center gap-3 md:hidden">
           <LanguageSwitcher />
-          <button className="text-foreground" onClick={() => setOpen(!open)}>
-            {open ? <X size={24} /> : <Menu size={24} />}
+          <button
+            className="p-2 rounded-xl bg-primary/10 text-primary active:scale-95 transition-transform"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle Menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-4 pb-4 space-y-1">
-          {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className={`block px-3 py-2 text-sm font-medium rounded-lg transition-colors ${active === l.href
-                ? "text-primary bg-primary/10"
-                : "text-muted-foreground hover:text-foreground"
-                }`}
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
-      )}
+      {/* Animated Mobile Menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border overflow-hidden"
+          >
+            <div className="px-4 py-6 space-y-2">
+              {navLinks.map((l, idx) => (
+                <motion.a
+                  key={l.href}
+                  href={l.href}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: idx * 0.05 }}
+                  onClick={() => setOpen(false)}
+                  className={`block px-4 py-3 text-base font-semibold rounded-xl transition-all ${active === l.href
+                    ? "text-primary bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    }`}
+                >
+                  {l.label}
+                </motion.a>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="pt-4 mt-4 border-t border-border flex items-center justify-between px-2"
+              >
+                <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{t('hero.contactMe')}</span>
+                <div className="flex gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                  <div className="p-3 rounded-xl bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all">
+                    <SocialGithub size={20} />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

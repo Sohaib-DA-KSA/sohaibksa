@@ -27,24 +27,27 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden"
+      className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center px-4 md:px-6 overflow-hidden py-20 md:py-0"
     >
       {/* Animated Background Gradient */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] animate-pulse delay-1000" />
+        <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/10 rounded-full blur-[80px] md:blur-[100px] animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-secondary/10 rounded-full blur-[80px] md:blur-[100px] animate-pulse delay-1000" />
       </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
         {/* LEFT TEXT */}
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="space-y-6 text-center md:text-left"
+          className="space-y-4 md:space-y-6 text-center md:text-left order-2 md:order-1"
         >
-          <motion.h1 variants={item} className="text-4xl md:text-6xl font-bold leading-tight">
+          <motion.h1
+            variants={item}
+            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] md:leading-tight"
+          >
             {t('hero.greeting')}{" "}
             <a
               href="https://www.linkedin.com/in/sohaib-adnan-833408369/"
@@ -56,38 +59,38 @@ const HeroSection = () => {
             </a>
           </motion.h1>
 
-          <motion.h2 variants={item} className="text-xl md:text-2xl text-muted-foreground">
+          <motion.h2 variants={item} className="text-lg xs:text-xl md:text-2xl text-muted-foreground font-medium">
             {t('hero.role')}
           </motion.h2>
 
-          <motion.p variants={item} className="text-muted-foreground max-w-lg mx-auto md:mx-0">
+          <motion.p variants={item} className="text-sm md:text-base text-muted-foreground max-w-lg mx-auto md:mx-0 leading-relaxed">
             {t('hero.description')}
           </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <a
               href="#projects"
-              className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium hover:opacity-90 transition shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 text-center"
+              className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 text-center text-sm md:text-base"
             >
               {t('hero.viewProjects')}
             </a>
 
             <a
               href="#contact"
-              className="px-6 py-3 rounded-xl border border-primary/30 hover:bg-primary/10 transition hover:-translate-y-1 text-center"
+              className="px-6 py-3 rounded-xl border border-primary/30 hover:bg-primary/10 transition hover:-translate-y-1 text-center text-sm md:text-base"
             >
               {t('hero.contactMe')}
             </a>
 
             <button
               onClick={() => window.print()}
-              className="px-6 py-3 rounded-xl border border-primary/30 hover:bg-primary/10 transition hover:-translate-y-1 flex items-center justify-center gap-2 group"
+              className="px-6 py-3 rounded-xl border border-primary/30 hover:bg-primary/10 transition hover:-translate-y-1 flex items-center justify-center gap-2 group text-sm md:text-base"
             >
               <span>{t('hero.downloadResume')}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -105,12 +108,12 @@ const HeroSection = () => {
         </motion.div>
 
         {/* RIGHT IMAGE */}
-        <div className="flex justify-center md:justify-end">
+        <div className="flex justify-center md:justify-end order-1 md:order-2">
           <motion.div
             className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, type: "spring" }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
           >
 
             {/* Glow background */}
@@ -118,9 +121,9 @@ const HeroSection = () => {
 
             {/* Circular image with 3D Float effect */}
             <motion.div
-              whileHover={{ scale: 1.05, rotate: 2, y: -10 }}
+              whileHover={{ scale: 1.05, rotate: 2, y: -5 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 cursor-pointer print:border-none print:shadow-none print:w-48 print:h-48 print:mx-auto"
+              className="relative w-56 h-56 xs:w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 cursor-pointer print:border-none print:shadow-none print:w-48 print:h-48 print:mx-auto"
             >
               <img
                 src={profileImg}
@@ -138,15 +141,15 @@ const HeroSection = () => {
 
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator - hidden on small mobiles */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+        className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block"
       >
-        <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center p-1">
-          <div className="w-1 h-3 bg-primary rounded-full animate-ping" />
+        <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center p-1">
+          <div className="w-1 h-2 md:h-3 bg-primary rounded-full animate-ping" />
         </div>
       </motion.div>
     </section>
