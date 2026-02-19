@@ -46,7 +46,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 h-16">
         <a href="#home" className="text-lg font-bold text-foreground tracking-tight flex items-center gap-1">
-          <span>Sohaib</span><span className="text-primary font-black">.</span>
+          <span>Sohaib.DA</span>
           <span className="hidden xs:inline-block text-[10px] uppercase tracking-wider text-muted-foreground font-normal ml-1">
             {t('hero.role').split('|')[0]}
           </span>
