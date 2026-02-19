@@ -100,7 +100,8 @@ export const translations = {
                     problem: "Convert raw sales data into actionable insights to optimize product strategy, customer preferences, and store operations.",
                     highlight: "Total Sales & Footfall, Average Bill, Hourly/Weekday trends, and Product Distribution analysis.",
                     recommendation: "Use the dashboard to identify peak operating hours and adjust staffing and product inventory accordingly.",
-                    dashboardImage: "/src/assets/projects/Coffee_analysis.png"
+                    dashboardImage: "/projects/Coffee_analysis.png",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "Service Call Analytics Dashboard",
@@ -108,7 +109,8 @@ export const translations = {
                     problem: "Monitor complaints, service turnaround time, and product performance by converting raw operational data into actionable insights.",
                     highlight: "Identified recurring service delays and recurring issues using dynamic drill-down visuals, enabling 25% faster corrective actions.",
                     recommendation: "Reallocate marketing budget or service resources toward underperforming categories with high growth potential.",
-                    dashboardImage: "/src/assets/projects/call_analysis.png"
+                    dashboardImage: "/projects/call_analysis.png",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "Zomato Performance Analysis",
@@ -116,7 +118,8 @@ export const translations = {
                     problem: "Transform raw food delivery data into actionable insights to monitor city-wise performance and YoY sales trends.",
                     highlight: "Segmented Veg vs Non-Veg consumption patterns across top cities, revealing a 15% growth opportunity in under-served categories.",
                     recommendation: "Focus marketing campaigns on specific high-performing food categories during peak seasonal windows.",
-                    dashboardImage: "/src/assets/projects/Zomato_dashboard .png"
+                    dashboardImage: "/projects/Zomato_dashboard.png",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "Cricket Career Performance Analytics",
@@ -124,21 +127,24 @@ export const translations = {
                     problem: "Compare player career performance metrics to support selection decisions to optimize team strategy.",
                     highlight: "Players with consistent form over 3+ seasons outperform high-peak inconsistent players.",
                     recommendation: "Use data-driven player selection based on consistency and situational performance.",
-                    dashboardImage: "/src/assets/projects/Cricketer_career.png"
+                    dashboardImage: "/projects/Cricketer_career.png",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "Music Store Database Analysis & Management System",
                     focus: "Relational Database Design & Business Intelligence",
                     problem: "Designed and optimized a relational database for a digital music store, managing thousands of transactional records across interconnected entities like customers, invoices, and artists.",
                     highlight: "Developed 40+ advanced SQL queries using window functions and multi-table joins to identify customer lifetime value and top-grossing genres.",
-                    recommendation: "Optimize database performance through indexing and structured schema normalization to support real-time reporting."
+                    recommendation: "Optimize database performance through indexing and structured schema normalization to support real-time reporting.",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "Data Cleaning & Exploratory Analysis",
                     focus: "Data Reliability",
                     problem: "Transform messy real-world datasets into clean, analysis-ready formats.",
                     highlight: "30% of raw data contained errors — cleaning improved report accuracy by 40%.",
-                    recommendation: "Establish data quality pipelines to prevent reporting errors and improve accuracy."
+                    recommendation: "Establish data quality pipelines to prevent reporting errors and improve accuracy.",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 }
             ]
         },
@@ -283,7 +289,8 @@ export const translations = {
                     problem: "تحويل بيانات المبيعات الخام إلى رؤى قابلة للتنفيذ لتحسين استراتيجية المنتج وتفضيلات العملاء وعمليات المتجر.",
                     highlight: "تحليل إجمالي المبيعات، متوسط الفاتورة، اتجاهات الساعة/اليوم، وتوزيع المنتجات.",
                     recommendation: "استخدم لوحة المعلومات لتحديد ساعات العمل الذروة وتعديل عدد الموظفين ومخزون المنتجات وفقاً لذلك.",
-                    dashboardImage: "/src/assets/projects/Coffee_analysis.png"
+                    dashboardImage: "/projects/Coffee_analysis.png",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "لوحة تحليلات مكالمات الخدمة",
@@ -291,7 +298,8 @@ export const translations = {
                     problem: "مراقبة الشكاوى ووقت استجابة الخدمة وأداء المنتج من خلال تحويل البيانات التشغيلية الخام إلى رؤى قابلة للتنفيذ.",
                     highlight: "تحديد تأخيرات الخدمة والمشكلات المتكررة باستخدام مرئيات تفصيلية ديناميكية، مما مكّن من اتخاذ إجراءات تصحيحية أسرع بنسبة 25%.",
                     recommendation: "إعادة تخصيص ميزانية التسويق أو موارد الخدمة نحو الفئات ذات الأداء الضعيف مع إمكانات نمو عالية.",
-                    dashboardImage: "/src/assets/projects/call_analysis.png"
+                    dashboardImage: "/projects/call_analysis.png",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "تحليل أداء زوماتو",
@@ -299,7 +307,8 @@ export const translations = {
                     problem: "تحويل بيانات توصيل الطعام الخام إلى رؤى قابلة للتنفيذ لمراقبة الأداء حسب المدينة واتجاهات المبيعات السنوية.",
                     highlight: "تقسيم أنماط استهلاك الوجبات النباتية مقابل غير النباتية عبر المدن الكبرى، مما كشف عن فرصة نمو بنسبة 15% في الفئات غير المخدومة.",
                     recommendation: "تركيز حملات التسويق على فئات طعام محددة ذات أداء عالٍ خلال فترات الذروة الموسمية.",
-                    dashboardImage: "/src/assets/projects/Zomato_dashboard .png"
+                    dashboardImage: "/projects/Zomato_dashboard.png",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "تحليلات أداء مهنة الكريكيت",
@@ -307,21 +316,24 @@ export const translations = {
                     problem: "مقارنة مقاييس أداء اللاعبين لدعم قرارات الاختيار لتحسين استراتيجية الفريق.",
                     highlight: "اللاعبون ذوو الأداء المتسق عبر أكثر من 3 مواسم يتفوقون على اللاعبين المتذبذبين ذوي القمم العالية.",
                     recommendation: "استخدام اختيار اللاعبين القائم على البيانات بناءً على الاتساق والأداء الظرفي.",
-                    dashboardImage: "/src/assets/projects/Cricketer_career.png"
+                    dashboardImage: "/projects/Cricketer_career.png",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "تحليل وإدارة قاعدة بيانات متجر الموسيقى (PostgreSQL)",
                     focus: "تصميم قواعد البيانات العلائقية وذكاء الأعمال",
                     problem: "تصميم وتحسين قاعدة بيانات علائقية لمتجر موسيقى رقمي، وإدارة آلاف السجلات عبر كيانات مترابطة للعملاء والفواتير والفنانين.",
                     highlight: "تطوير أكثر من 40 استعلام SQL متقدم باستخدام Window Functions و Multi-table Joins لتحديد القيمة الدائمة للعملاء والأنواع الأكثر ربحية.",
-                    recommendation: "تحسين أداء قاعدة البيانات من خلال الفهرسة وتطبيع المخطط لدعم التقارير الفورية."
+                    recommendation: "تحسين أداء قاعدة البيانات من خلال الفهرسة وتطبيع المخطط لدعم التقارير الفورية.",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 },
                 {
                     title: "تنظيف البيانات والتحليل الاستكشافي",
                     focus: "موثوقية البيانات",
                     problem: "تحويل مجموعات البيانات الفوضوية في العالم الحقيقي إلى تنسيقات نظيفة وجاهزة للتحليل.",
                     highlight: "احتوى 30% من البيانات الخام على أخطاء - التنظيف حسن دقة التقارير بنسبة 40%.",
-                    recommendation: "إنشاء خطوط أنابيب جودة البيانات لمنع أخطاء التقارير وتحسين الدقة."
+                    recommendation: "إنشاء خطوط أنابيب جودة البيانات لمنع أخطاء التقارير وتحسين الدقة.",
+                    links: { github: "https://github.com/Sohaib-DA-KSA" }
                 }
             ]
         },

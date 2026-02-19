@@ -1,7 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
-import dashboardImg from "../assets/Dashboard/Dashboard.png";
 import { useLanguage } from "../context/LanguageContext";
-
 const AnalyticalSection = () => {
   const { t } = useLanguage();
   const tags = t('analytics.tags') as unknown as string[];
@@ -27,7 +25,7 @@ const AnalyticalSection = () => {
             {/* Image */}
             <div className="rounded-xl overflow-hidden border border-border shadow-xl">
               <img
-                src={dashboardImg}
+                src="/dashboard/Dashboard.png"
                 alt={t('analytics.subtitle')}
                 className="w-full object-cover"
               />
