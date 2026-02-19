@@ -78,11 +78,11 @@ export const translations = {
                 python: "Python",
                 pandas: "Pandas",
                 powerbi: "Power BI",
-                matplotlib: "Mathplotlib",
+                matplotlib: "Matplotlib",
                 seaborn: "Seaborn",
                 dataCleaning: "Data Cleaning",
                 kpiAnalysis: "KPI Analysis",
-                decisionSupport: "Decision Support",
+                decisionSupport: "Decision Making",
                 reporting: "Reporting"
             }
         },
@@ -261,11 +261,11 @@ export const translations = {
                 python: "Python",
                 pandas: "Pandas",
                 powerbi: "Power BI",
-                matplotlib: "Mathplotlib",
+                matplotlib: "Matplotlib",
                 seaborn: "Seaborn",
                 dataCleaning: "تنظيف البيانات",
-                kpiAnalysis: "تحليل مؤشرات الأداء",
-                decisionSupport: "دعم القرار",
+                kpiAnalysis: "تحليل المؤشرات",
+                decisionSupport: "صنع القرار",
                 reporting: "إعداد التقارير"
             }
         },
