@@ -43,8 +43,10 @@ const ContactSection = () => {
           formRef.current?.reset();
         },
         (error) => {
-          setSuccess(t('contact.errorMsg'));
-          console.error(error.text);
+          // Providing more specific error feedback for debugging
+          const errorMsg = error?.text || "Unknown error";
+          setSuccess(`${t('contact.errorMsg')} (${errorMsg})`);
+          console.error("EmailJS Error:", error);
         }
       )
       .finally(() => setLoading(false));
