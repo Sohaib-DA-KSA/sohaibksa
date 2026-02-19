@@ -111,7 +111,7 @@ export const translations = {
                     dashboardImage: "/src/assets/projects/call_analysis.png"
                 },
                 {
-                    title: "Zomato Sales Performance Analysis",
+                    title: "Zomato Performance Analysis",
                     focus: "Consumer Demand & Market Insights",
                     problem: "Transform raw food delivery data into actionable insights to monitor city-wise performance and YoY sales trends.",
                     highlight: "Segmented Veg vs Non-Veg consumption patterns across top cities, revealing a 15% growth opportunity in under-served categories.",
@@ -294,7 +294,7 @@ export const translations = {
                     dashboardImage: "/src/assets/projects/call_analysis.png"
                 },
                 {
-                    title: "تحليل أداء مبيعات زوماتو",
+                    title: "تحليل أداء زوماتو",
                     focus: "طلب المستهلك ورؤى السوق",
                     problem: "تحويل بيانات توصيل الطعام الخام إلى رؤى قابلة للتنفيذ لمراقبة الأداء حسب المدينة واتجاهات المبيعات السنوية.",
                     highlight: "تقسيم أنماط استهلاك الوجبات النباتية مقابل غير النباتية عبر المدن الكبرى، مما كشف عن فرصة نمو بنسبة 15% في الفئات غير المخدومة.",
