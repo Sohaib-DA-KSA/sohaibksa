@@ -82,7 +82,7 @@ export const translations = {
                 seaborn: "Seaborn",
                 dataCleaning: "Data Cleaning",
                 kpiAnalysis: "KPI Analysis",
-                decisionSupport: "Decision Making",
+                decisionSupport: "Decision",
                 reporting: "Reporting"
             }
         },
@@ -265,7 +265,7 @@ export const translations = {
                 seaborn: "Seaborn",
                 dataCleaning: "تنظيف البيانات",
                 kpiAnalysis: "تحليل المؤشرات",
-                decisionSupport: "صنع القرار",
+                decisionSupport: "القرار",
                 reporting: "إعداد التقارير"
             }
         },
