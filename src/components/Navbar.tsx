@@ -5,6 +5,8 @@ import SocialGithub from "@/components/SocialGithub";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "../context/LanguageContext";
 
+import logo from "@/assets/logo.svg";
+
 const Navbar = () => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
@@ -45,11 +47,17 @@ const Navbar = () => {
         }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 h-16">
-        <a href="#home" className="text-lg font-bold text-foreground tracking-tight flex items-center gap-1">
-          <span>Sohaib.DA</span>
-          <span className="hidden xs:inline-block text-[10px] uppercase tracking-wider text-muted-foreground font-normal ml-1">
-            {t('hero.role').split('|')[0]}
-          </span>
+        <a href="#home" className="flex items-center gap-2 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-primary/20 blur-md rounded-full group-hover:bg-primary/40 transition-colors" />
+            <img src={logo} alt="Sohaib.DA Logo" className="relative w-9 h-9 object-contain transition-transform duration-300 group-hover:scale-110" />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-lg font-bold text-foreground tracking-tight leading-none transition-colors group-hover:text-primary">Sohaib.DA</span>
+            <span className="hidden xs:inline-block text-[10px] uppercase tracking-wider text-muted-foreground font-normal">
+              {t('hero.role').split('|')[0]}
+            </span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}
